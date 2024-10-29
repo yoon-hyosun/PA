@@ -9,11 +9,8 @@ print()
 print(soup.find('p',id='fruits2'))
 print()
 
-
 print('='*10)
-#
-#
-#
+
 result = soup.find_all( 'span','store')
 print(result)
 
@@ -24,14 +21,6 @@ for i in result :
     f.write(txt+'\n')
 f.close()
 
-print('============================='*10)
-
-
-print(soup.select('p'))
-print('---------------'*10)
-print(soup.select('p.name2'))
-print(soup.select('.name2'))
-print(soup.select('#fruits2'))
 
 
 

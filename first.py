@@ -19,7 +19,6 @@ print(soup.find('p', align='right'))
 print(soup.find_all('p'))
 print()
 
-
 result = soup.find_all('p')
 
 for i in result:

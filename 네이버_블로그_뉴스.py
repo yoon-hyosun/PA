@@ -1,4 +1,4 @@
-# Step 1. 필요한 모듈과 라이브러리를 로딩하고 검색어를 입력
+# Step 1. 필요한 모듈과 라이브러리를 로딩
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -6,14 +6,14 @@ from selenium.webdriver.chrome.service import Service
 s = Service("c:/Temp/chromedriver.exe")
 driver = webdriver.Chrome(service=s)
 
-# 검색어 입력과 네이버로 이동
+# 검색어 저장과 네이버로 이동
 f_name = "Data/네이버_여름여행.txt"
 
 query_txt = "여름여행"
 driver.get("https://www.naver.com")
 driver.maximize_window()
 
-# 네이버 검색창을 찾아 검색어 입력
+# 네이버 검색창을 찾아 검색어 입력 및 실행
 element = driver.find_element("id", "query")
 element.send_keys(query_txt)
 element.send_keys("\n")
@@ -66,6 +66,9 @@ for i in content_list:
 f.close()
 
 #================================================
+
+
+
 # Step 5.검색어 입력과 네이버로 이동
 driver.get("https://www.naver.com")
 driver.maximize_window()
@@ -125,3 +128,4 @@ for i in news_list:
         pass
 
 f.close()
+
