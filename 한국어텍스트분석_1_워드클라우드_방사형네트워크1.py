@@ -14,6 +14,8 @@ print("Kkma:",kkma.nouns("나는 사과, 사과 , 복숭아, 복숭아가 좋아
 print("okt:",okt.nouns("나는 사과, 사과 , 복숭아, 복숭아가 좋아요"))
 
 
+
+
 #Step 3. 텍스트 파일을 불러와서 형태소 분석
 #Step 3. 키워드를 추출하고 빈도조사
 data1 = open("Data/파이썬_텍스트분석예제.txt", encoding="utf-8").read( )
@@ -25,7 +27,9 @@ data3 = Counter(data2)
 print("2.단어별 빈도수:",data3)
 
 
-#Step 4. 불용어 제거하기
+
+
+#Step 4. 불용어 제거하기   ---- 1차
 sword = open("Data/불용어목록.txt",encoding="utf-8").read()
 print(sword)
 
@@ -35,6 +39,8 @@ data4 = [ each_word for each_word in data2
 print("1차 불용어 제거 결과")
 print(data4)
 
+
+#Step 4. 불용어 제거하기 ---- 2차
 #글자수로 불용어 제거하기
 data5 = []
 for i in data4 :
@@ -43,6 +49,7 @@ for i in data4 :
 
 print("2차 불용어 제거")
 print(data5)
+
 
 # Step 5. 단어별 빈도수 집계하기
 data6 = Counter(data5)
@@ -54,6 +61,7 @@ print(data7)
 for i, j in data7:
     print ( i, j)
 print("---------------")
+
 
 #워드 클라우드를 그리기 위하여 데이터를 정리
 data8 = dict(data7)
@@ -75,14 +83,13 @@ plt.show()
 
 
 
-#네트워크형_ 워드클라우드
+
+#Step 7. 네트워크형_ 워드클라우드
 import matplotlib.pyplot as plt
 import networkx as nx
 
 # 한글 폰트 설정 (필요한 경우)
 plt.rcParams['font.family'] = 'Batang'
-
-# 데이터
 print(data8)
 
 #네트워크 중심노드
